@@ -1,0 +1,40 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+<br><br>
+<div class="container">
+    <H4 class="text-center">Détails fournisseur</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-dark">
+            <tr>
+                <th scope="col" style="color: rgb(192, 192, 192);">Nom</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">adresse</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">email</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">telephone</th>
+                <th style="color: rgb(192, 192, 192);">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in Fournisseurs %}
+            <tr>
+                <td> {{t.nom}}</td>
+                <td>{{t.adresse}}</td>
+                <td>{{t.email}}</td>
+                <td>{{t.telephone}}</td>
+                
+                <td>
+                    <button class="btn btn-success btn-sm"><a  style="text-decoration: none;color: white;" href="{% url 'update-Fournisseur' t.id  %}">Edit</a> </button>
+                    <button class="btn btn-danger btn-sm"><a  style="text-decoration: none;color: white;" href="{% url 'delete-Fournissur' t.id  %}">Supprimer</a> </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+        <p style="text-align: center;"><a style="text-decoration: none;" href="/fournisseuradd">Nouveaufournisseur</a></p>
+
+    </table>
+</div>
+
+
+{% endblock content %}

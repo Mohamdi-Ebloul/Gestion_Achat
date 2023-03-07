@@ -1,0 +1,48 @@
+{% extends 'admin/adminbase2.html' %}
+
+{% block content %}
+<br><br>
+
+
+    
+
+
+    
+<br><br>
+<table width="120%">
+
+<tr>
+    <td>
+
+        <table style="font-size: 80%; text-align: center;border-spacing: 5px; border-collapse: separate;" >
+
+            <tr>
+                <td height="50">Toutes les demandes</td>
+                <td style="background-color: #5b018f; width: 25%; color: white;" > {{totalrequest}}<br> A Envoyer</td>
+                <td style="background-color: #5b018f; width: 25%;color: white;" >   {{totaladminunit}} <br>En Attente</td>
+                <td style="background-color: #5b018f; width: 25%;color: white;" >  {{totalapprovedrequest}} <br>En Retard</td></tr>
+            <tr><td height="50">Mes demandes de devis</td>
+                <td style="background-color: #dededee5; width: 25%; " >{{totalrequest}}</td>
+                <td style="background-color: #dededee5; width: 25%;" >  {{totaladminunit}}</td>
+                <td style="background-color: #dededee5; width: 25%;" >{{totalapprovedrequest}}</td></tr>
+        </table>
+    </td>
+    <td>
+
+        <table style="font-size: 80%; text-align: center;border-spacing: 5px; border-collapse: separate;" >
+
+            <tr>
+                <td height="50">Valeur moyenne commande</td>
+                <td style="background-color: #dededee5; width: 25%; " > {{valeurmoyen}}<br> </td>
+                <td  >  Acheté ces 7 derniers jours</td>
+                <td style="background-color: #dededee5; width: 25%;" >  {{valeurmoyen}} <br></td></tr>
+            <tr><td height="50">Délai pour les achats</td>
+                <td style="background-color: #dededee5; width: 25%; " >{{delai}}</td>
+                <td  >  Demandes de prix envoyées les 7 derniers jours</td>
+                <td style="background-color: #dededee5; width: 25%;" >{{dprix}}</td></tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends 'admin/adminbase3.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+<br><br>
+<div class="container">
+    <!-- {% if requests %}
+    <H4 class="text-center">Produit demandé</H4><br>
+    {% if message %}
+   <h5 class="text-center" style="color: red;"> {{message}}</h5><br>
+{% else %}
+
+{% endif %}
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-dark">
+            <tr>
+                <th scope="col" style="color: rgb(192, 192, 192);">Achateur</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Produit</th>
+           
+                <th scope="col" style="color: rgb(192, 192, 192);">Fourniseur</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Société</th>
+
+                <th scope="col" style="color: rgb(192, 192, 192);">Prix</th>
+                <th scope="col" style="color: rgb(192, 192, 192);"> Quantite</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Date</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">état</th>
+                <th style="color: rgb(192, 192, 192);">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in requests %}
+            <tr>
+                <td> {{t.Achateur_name}}</td>
+                <td>{{t.Produit_name}}</td>
+
+                <td>{{t.Fourniseur_name}}</td>
+
+                <td>{{t.societe}}</td>
+
+                <td>{{t.Prix}}</td>
+                <td>{{t.Quantite}}</td>
+                <td>{{t.date}}</td>
+                <td>{{t.status}}</td>
+                
+                
+                <td>
+                   
+                    <button class="btn btn-success btn-sm"><a  style="text-decoration: none;color: white;" href="{% url 'update-approve-status' t.id  %}"><i class="fa fa-check"></i> Approuver</a> </button>
+                    <button class="btn btn-danger btn-sm"><a  style="text-decoration: none;color: white;" href="{% url 'update-reject-status' t.id  %}"><i class="fa fa-times"></i> Rejeter</a> </button>
+                    
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    
+    </table>
+{% else %}
+<div class="alert alert-danger" role="alert">
+   Aucune demande de Produit par Achateur!
+  </div>
+
+{% endif %} -->
+
+</div>
+
+
+{% endblock content %}

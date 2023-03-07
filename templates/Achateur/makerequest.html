@@ -1,0 +1,87 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+<head>
+        <!-- Font special for pages-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+        <!-- Main CSS-->
+    
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+      
+        <div style="margin-left: 70px;" class="card card-5">
+            <div class="card-heading" style="background-color:  #5b018f;" >
+                <h2 class="title">Faire Commend </h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" autocomplete="off" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="name">Achateur Nom</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.Achateur_name|attr:'required:false'  %}
+
+                                {% render_field userForm.last_name|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+                   
+                   
+                    <div class="form-row">
+                        <div class="name">Produit Nom</div>
+                        <div class="value">
+                            <div class="select--style-5">
+                                {% render_field request_form.Produit_name|attr:'required:true'  class="select--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Fourniseur Nom</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.Fourniseur_name|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+    
+
+                    <div class="form-row">
+                        <div class="name">Prix</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.Prix|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Quantite</div>
+                        <div class="value">
+                            <div class="input-group">
+                                {% render_field request_form.Quantite|attr:'required:true'  class="input--style-5"  %}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="text-center">
+                        <button style="background-color:  #5b018f;"  class="btn btn--radius-2 btn-danger" type="submit">Demand</button>
+                    </div>
+                </form>
+                <br>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

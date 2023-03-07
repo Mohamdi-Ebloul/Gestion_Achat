@@ -1,0 +1,40 @@
+{% extends 'admin/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+<br><br>
+<div class="container">
+    <H4 class="text-center">Détails Produit</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-dark">
+            <tr>
+                <th scope="col" style="color: rgb(192, 192, 192);">Nom</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">description</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Prix unitaire</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Quantite stock</th>
+                <th style="color: rgb(192, 192, 192);">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in Produits %}
+            <tr>
+                <td> {{t.nom}}</td>
+                <td>{{t.description}}</td>
+                <td>{{t.prix_unitaire}}</td>
+                <td>{{t.quantite_stock}}</td>
+                
+                <td>
+                    <button class="btn btn-success btn-sm"><a  style="text-decoration: none;color: white;" href="{% url 'update-Produit' t.id  %}">Edit</a> </button>
+                    <button class="btn btn-danger btn-sm"><a  style="text-decoration: none;color: white;" href="{% url 'delete-Produit' t.id  %}">Supprimer</a> </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+        <p style="text-align: center;"><a style="text-decoration: none;" href="/produitadd">Nouveau Produit</a></p>
+
+    </table>
+</div>
+
+
+{% endblock content %}

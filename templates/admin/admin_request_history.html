@@ -1,0 +1,75 @@
+{% extends 'admin/adminbase2.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+<head>
+ <style>
+     .label {
+  color: white;
+  padding: 8px;
+}
+
+.success {background-color: #4CAF50;} /* Green */
+.info {background-color: #2196F3;} /* Blue */
+.warning {background-color: #ff9800;} /* Orange */
+.danger {background-color: #f44336;} /* Red */
+.other {background-color: #e7e7e7; color: black;} /* Gray */
+ </style>
+</head>
+<br><br>
+<div class="container">
+    <!-- <H4 class="text-center">Historique demandes Produit</H4><br>
+    {% if message %}
+   <h5 class="text-center" style="color: red;"> {{message}}</h5><br>
+{% else %}
+
+{% endif %}
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-dark">
+            <tr>
+                <th scope="col" style="color: rgb(192, 192, 192);">Achateur</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Produit</th>
+           
+                <th scope="col" style="color: rgb(192, 192, 192);">Fourniseur</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Société</th>
+
+                <th scope="col" style="color: rgb(192, 192, 192);">Prix</th>
+                <th scope="col" style="color: rgb(192, 192, 192);"> Quantite</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Date</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">état</th>
+                <th scope="col" style="color: rgb(192, 192, 192);">Stock état</th> -->
+<!--                
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in requests %}
+            <tr>
+                <td> {{t.Achateur_name}}</td>
+                <td>{{t.Produit_name}}</td>
+                <td>{{t.Fourniseur_name}}</td>
+                
+                <td>{{t.societe}}</td>
+                
+
+                <td>{{t.Prix}}</td>
+                <td>{{t.Quantite}}</td>
+                <td>{{t.date}}</td>
+                {% if t.status == 'Approved' %}
+                <td><span class="label success"> Approuver</span></td>
+              <td><span class="label success"> {{t.Quantite}} Unité déduit du stock</span></td> -->
+                <!-- {% else %}
+                <td><span class="label danger">Rejected</span></td>
+               <td><span class="label danger"> 0 Unité déduite du stock</span></td> -->
+                <!-- {% endif %}
+                
+                
+            
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    
+    </table> --> 
+</div>
+
+{% endblock content %}
