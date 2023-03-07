@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Passer une commande</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="adresse_livraison">Adresse de livraison :</label>
+    <input type="text" id="adresse_livraison" name="adresse_livraison"><br>
+    <label for="ville_livraison">Ville :</label>
+    <input type="text" id="ville_livraison" name="ville_livraison"><br>
+    <label for="code_postal_livraison">Code postal :</label>
+    <input type="text" id="code_postal_livraison" name="code_postal_livraison"><br>
+    <input type="submit" value="Passer la commande">
+  </form>
+{% endblock %}

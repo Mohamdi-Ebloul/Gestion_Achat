@@ -1,0 +1,10 @@
+{% extends "nom_de_votre_application/base.html" %}
+
+{% block title %}Confirmation de commande - {{ block.super }}{% endblock %}
+
+{% block content %}
+  <h1>Confirmation de commande</h1>
+  <p>Merci pour votre commande !</p>
+  <p>Le numéro de votre commande est le {{ commande.id }}.</p>
+  <p>Vous allez recevoir un e-mail de confirmation avec les détails de votre commande.</p>
+{% endblock %}

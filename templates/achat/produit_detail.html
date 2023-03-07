@@ -1,0 +1,14 @@
+{% extends "nom_de_votre_application/base.html" %}
+
+{% block title %}Détails du produit - {{ block.super }}{% endblock %}
+
+{% block content %}
+  <h1>{{ produit.nom }}</h1>
+  <img src="{{ produit.image.url }}" alt="{{ produit.nom }}">
+  <p>{{ produit.description }}</p>
+  <p>Prix : {{ produit.prix }} €</p>
+  <form method="post" action="{% url 'ajouter_au_panier' produit.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Ajouter au panier">
+  </form>
+{% endblock %}

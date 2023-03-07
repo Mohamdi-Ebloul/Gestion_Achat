@@ -1,0 +1,21 @@
+{% extends "achat//base.html" %}
+
+{% block title %}Liste des produits - {{ block.super }}{% endblock %}
+
+{% block content %}
+  <h1>Liste des produits</h1>
+  {% for produit in produits %}
+    <div>
+      <h2>{{ produit.nom }}</h2>
+      <img src="{{ produit.image.url }}" alt="{{ produit.nom }}">
+      <p>{{ produit.description }}</p>
+      <p>Prix : {{ produit.prix }} €</p>
+      <form method="post" action="{% url 'ajouter_au_panier' produit.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Ajouter au panier">
+      </form>
+    </div>
+  {% empty %}
+    <p>Aucun produit n'est disponible pour le moment.</p>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Mon site d'achat{% endblock %}</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'accueil' %}">Accueil</a></li>
+        <li><a href="{% url 'liste_produits' %}">Produits</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer>
+    <p>&copy; 2023 - Mon site d'achat</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "nom_de_votre_application/base.html" %}
+
+{% block title %}Panier - {{ block.super }}{% endblock %}
+
+{% block content %}
+  <h1>Panier</h1>
+  {% if produits %}
+    <ul>
+      {% for produit in produits %}
+        <li>
+          {{ produit.quantite }} x {{ produit.nom }} ({{ produit.prix }} €) = {{ produit.prix_total }} €
+        </li>
+      {% endfor %}
+    </ul>
+    <h2>Total : {{ total }} €</h2>
+    <form method="post" action="{% url 'valider_commande' %}">
+      {% csrf_token %}
+      <input type="submit" value="Valider la commande">
+    </form>
+  {% else %}
+    <p>Le panier est vide.</p>
+  {% endif %}
+{% endblock %}
