@@ -28,7 +28,7 @@ def is_Achateur(user):
 
 def afterlogin_view(request):
     if is_Achateur(request.user):
-        return redirect('admin-dashboard')
+        return redirect('Achateur-dashboard')
     else:
         return redirect('admin-dashboard')
 

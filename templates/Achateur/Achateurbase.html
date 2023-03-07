@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,31 +161,47 @@ body{
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-danger">
-        <a style="color:white;" class="navbar-brand" href="/"><i class="fa fa-heartbeat"></i>&nbsp;<font face = "Comic sans MS" size ="4">Système de gestion Achats</font></a>
-        
-      
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="/logout">déconnecter &nbsp; <i class="fa fa-power-off"></i></a>
-                </li>
-                
-            </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-danger">
+    <a style="color:white;" class="navbar-brand" href="/">&nbsp;<font face = "Comic sans MS" size ="5">Achats</font></a>
+    <a style="color:white;font-size: 100%;" class="navbar-brand" href="/admin-Produit">&nbsp;&nbsp;<font face = "Comic sans MS" size ="4"></font>Produit</a>
+     <a style="color:white;font-size: 100%;" class="navbar-brand" href="/admin-Fournisseur">&nbsp;&nbsp;<font face = "Comic sans MS" size ="4"></font>Fournisseur</a>
+     <a style="color:white;font-size: 100%;" class="navbar-brand" href= "/Achateur/make-request/{{user.id}}">&nbsp;&nbsp;<font face = "Comic sans MS" size ="4"></font>Ajouter Command</a>
+     <a style="color:white;font-size: 100%;" class="navbar-brand" href="/Achateur/my-request">&nbsp;&nbsp;<font face = "Comic sans MS" size ="4"></font>Historique Commend</a>
+
+  
+    <div class="navbar-collapse collapse w-70 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/">My Societe &nbsp; </a>
+        </li>
+            <li class="nav-item">
+              <div class="user-area dropdown float-right">
+                <a href="#" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <table>
+                  <tr>
+                    <td>
+                      <img  width="20" src="{% static 'image/admin.jpg' %}" alt="User Avatar">
+
+                    </td>
+                    <td>
+                      <a class="nav-link" style="color: white;"  href="#"><i class="fa fa- user"></i>{{user.last_name}}</a>
+
+                    </td>
+                  </tr>
+                 </table>
+                </a>
+                <div class="user-menu dropdown-menu">
+          
+                    <a style="color:black;font-size: 80%;" class="nav-link" style="color: white;" href="/logout">déconnecter </a>
+            </div>     </div>                    </li>
+            
+        </ul>
+    </div>
+   
+  </nav>
 <br><br>
 <div class="wrapper">
-    <div class="sidebar">
-        
-        <ul>
-            <li><a style="text-decoration:none;" href="/"><i class="fas fa-home"></i>Home</a></li>
-            <li><a style="text-decoration:none;" href="/Achateur/make-request"><i class="fas fa-user-plus"></i>Faire une Commend</a></li>
-            <li><a style="text-decoration:none;" href="/Achateur/my-request"><i class="fas fa-history"></i>Historique Commend</a></li>
-
-        </ul> 
-
-    </div>
+   
     <div class="main_content">
 
 
